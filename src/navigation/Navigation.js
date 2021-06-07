@@ -24,6 +24,7 @@ const Navigation = () => {
                 <Stack.Screen
                     name='Gallery'
                     component={Gallery}
+                    options={{ headerShown: false }}
                 />
             </Stack.Navigator>
         </NavigationContainer>
