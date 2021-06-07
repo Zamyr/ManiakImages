@@ -12,7 +12,5 @@ export const validateEmail = email => {
 };
 
 export const API = {
-	default_url: 'https://challenge.maniak.co/api/',
-	login_url: 'login',
-	images_url: 'images',
+	default_url: 'https://challenge.maniak.co/api/'
 }

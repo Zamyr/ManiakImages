@@ -24,8 +24,17 @@ const Login = () => {
     
     const existsToken = async() => {
         const token = await AsyncStorage.getItem('token')
-        console.log(token);
-        if(token !== null) return navigation.navigate('Gallery')
+        console.log('existsToken ', token);
+        if(token !== null){
+            navigation.reset({
+                index: 1,
+                routes: [
+                    {
+                        name: 'Gallery',
+                    },
+                ],
+            });
+        }
     }
 
     const login = async() => {
@@ -39,7 +48,7 @@ const Login = () => {
 		if (!validateEmail(email)) return Alert.alert('Oops!', 'The email is invalid');
 
         try {
-            const url = `${API.default_url}${API.login_url}`
+            const url = `${API.default_url}/login`
             const data = {
                 username: email,
                 password: form.password
@@ -52,6 +61,7 @@ const Login = () => {
             }
 
             await AsyncStorage.setItem('token', response.data.token)
+            existsToken()
 
         } catch (error) {
             Alert.alert('Error', 'Something went wrong, try again')
