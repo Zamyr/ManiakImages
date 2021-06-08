@@ -28,6 +28,10 @@ IOS
 ```bash
 npm run ios
 ```
+## Credentials
+
+Username: challenge@maniak.co
+Password: maniak2020
 
 
 ## Versions info
